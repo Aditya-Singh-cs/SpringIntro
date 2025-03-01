@@ -36,4 +36,11 @@ public class HelloWebController {
     public String hello(@RequestBody User user){
         return "Hello " + user.getFirstName()+" "+user.getLastName() + " from BridgeLabz";
     }
+
+    // Handles HTTP PUT requests to "/put/{firstName}"
+//    http://localhost:8080/hello/put/Aditya?lastName=Singh
+    @PutMapping("/hello/put/{firstName}")
+    public String hello(@PathVariable String firstName,@RequestParam(value = "lastName")String lastName){
+        return "Hello " + firstName+" "+lastName + " from BridgeLabz";
+    }
 }
