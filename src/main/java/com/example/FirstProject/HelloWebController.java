@@ -29,4 +29,11 @@ public class HelloWebController {
     public String helloParam(@PathVariable String name){
         return "Hello " + name + " from BridgeLabz";
     }
+
+    // Extracts firstName and lastName from the request body and returns a greeting message
+//    http://localhost:8080/hello/post
+    @PostMapping("/hello/post")
+    public String hello(@RequestBody User user){
+        return "Hello " + user.getFirstName()+" "+user.getLastName() + " from BridgeLabz";
+    }
 }
