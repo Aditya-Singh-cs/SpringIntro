@@ -21,4 +21,12 @@ public class HelloWebController {
         return "Hello " + name + " from BridgeLabz";
     }
 
+//    This method handles HTTP GET requests for the "/hello/param/{name}" endpoint.
+//    It takes a dynamic value from the URL path using @PathVariable and returns a greeting message.
+
+    //    http://localhost:8080/hello/param/Aditya
+    @GetMapping("/hello/param/{name}")
+    public String helloParam(@PathVariable String name){
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
